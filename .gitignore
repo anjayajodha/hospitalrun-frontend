@@ -24,7 +24,7 @@ nbproject/project.properties
 nbproject/project.xml
 
 *.sublime-workspace
-server/config.js
+# server/config.js
 .brackets.json
 /app/nbproject/private/
 newrelic_agent.log
