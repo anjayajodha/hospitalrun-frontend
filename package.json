@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "./script/build",
-    "start": "./script/server",
+    //"start": "./script/server",
     "test": "./script/test"
   },
   "repository": {
@@ -21,7 +21,8 @@
     "url": "git@github.com:anjayajodha/hospitalrun-frontend"
   },
   "engines": {
-    "node": ">= 4"
+    "node": "6.9.1",
+    "npm" : "3.10.9"
   },
   "author": "John Kleinschmidt",
   "contributors": [
