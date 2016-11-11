@@ -29,7 +29,7 @@
     "Joel Glovier"
   ],
   "license": "GPL-3.0",
-  "devDependencies": {
+  "dependencies": {
     "body-parser": "^1.14.2",
     "broccoli-asset-rev": "^2.4.5",
     "broccoli-export-text": "0.0.2",
