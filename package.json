@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "./script/build",
-    //"start": "./script/server",
+    "start": "./script/server",
     "test": "./script/test"
   },
   "repository": {
