@@ -135,6 +135,8 @@ echo Cleaning Cache
 eval $NPM_CMD cache clean
 exitWithMessageOnError "npm cache cleaning failed"
 
+echo $PWD
+
 echo Installing npm modules
 eval $NPM_CMD install --no-optional --no-bin-links
 exitWithMessageOnError "npm install failed"
