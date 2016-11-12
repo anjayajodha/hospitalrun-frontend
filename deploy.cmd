@@ -105,7 +105,6 @@ IF EXIST "%DEPLOYMENT_TARGET%\package.json" (
   call :ExecuteCmd !NPM_CMD! install
   call :ExecuteCmd !NPM_CMD! prune
   call :ExecuteCmd bower install
-  call :ExecuteCmd ember build
   IF !ERRORLEVEL! NEQ 0 goto error
   popd
 )

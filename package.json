@@ -12,7 +12,8 @@
     "prod"
   ],
   "scripts": {
-    "build": "./script/build"
+    "build": "./script/build",
+    "start": "node"
   },
   "repository": {
     "type": "git",
