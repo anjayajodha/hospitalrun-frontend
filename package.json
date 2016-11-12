@@ -12,8 +12,7 @@
     "prod"
   ],
   "scripts": {
-    "build": "./script/build",
-    "start": "node ./node_modules/ember-cli/bin/ember serve"
+    "build": "./script/build"
   },
   "repository": {
     "type": "git",
