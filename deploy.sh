@@ -29,18 +29,18 @@ exitWithMessageOnError "Missing tar. I figured as much."
 
 # Setup
 # -----
-echo Copy assets to $DEPLOYMENT_TEMP for build
-tar cf - --exclude=node_modules --exclude=bower_components --exclude=dist --exclude=tmp --exclude=.git . | (cd $DEPLOYMENT_TEMP && tar xvf - )
-exitWithMessageOnError "Failed to create and extract tarball"
+#echo Copy assets to $DEPLOYMENT_TEMP for build
+#tar cf - --exclude=node_modules --exclude=bower_components --exclude=dist --exclude=tmp --exclude=.git . | (cd $DEPLOYMENT_TEMP && tar xvf - )
+#exitWithMessageOnError "Failed to create and extract tarball"
 
-echo Switch to the temp directory
-cd $DEPLOYMENT_TEMP
+#echo Switch to the temp directory
+#cd $DEPLOYMENT_TEMP
 
-if [[ -d node_modules ]]; then
-  echo Removing node_modules folder
-  rm -Rf node_modules
-  exitWithMessageOnError "node_modules removal failed"
-fi
+#if [[ -d node_modules ]]; then
+#  echo Removing node_modules folder
+#  rm -Rf node_modules
+#  exitWithMessageOnError "node_modules removal failed"
+#fi
 
 SCRIPT_DIR="${BASH_SOURCE[0]%\\*}"
 SCRIPT_DIR="${SCRIPT_DIR%/*}"
@@ -96,7 +96,7 @@ fi
 # -----
 
 echo Installing ember-cli
-eval $NPM_CMD install --no-optional --no-bin-links ember-cli
+eval $NPM_CMD install -g --no-optional --no-bin-links ember-cli
 exitWithMessageOnError "ember-cli failed"
 
 echo Installing ember-cli-azure-deploy
@@ -155,7 +155,7 @@ cp web.config dist\
 # ----------
 
 if [[ "$IN_PLACE_DEPLOYMENT" -ne "1" ]]; then
-  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_TEMP/dist" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
+  "$KUDU_SYNC_CMD" -v 50 -f "$DEPLOYMENT_SOURCE/dist" -t "$DEPLOYMENT_TARGET" -n "$NEXT_MANIFEST_PATH" -p "$PREVIOUS_MANIFEST_PATH" -i ".git;.hg;.deployment;deploy.sh"
   exitWithMessageOnError "Kudu Sync failed"
 fi
 
