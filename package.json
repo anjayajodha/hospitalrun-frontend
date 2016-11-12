@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "./script/build",
-    "start": "./script/server"
+    "start": "ember serve"
   },
   "repository": {
     "type": "git",
