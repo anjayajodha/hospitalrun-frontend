@@ -138,7 +138,7 @@ exitWithMessageOnError "npm cache cleaning failed"
 echo $PWD
 
 echo Installing npm modules
-eval $NPM_CMD install --no-optional --no-bin-links
+eval $NPM_CMD install --no-optional
 exitWithMessageOnError "npm install failed"
 
 echo Installing bower dependencies
