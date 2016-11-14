@@ -19,13 +19,15 @@ module.exports = function(environment) {
     }
   };
 
+
+
   ENV.contentSecurityPolicy = {
-    'connect-src': "'self'",
-    'default-src': "'self'",
-    'frame-src': "'self'",
-    'img-src': "'self' filesystem: data:",
-    'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-    'style-src': "'self' 'unsafe-inline'"
+    'connect-src': "*",
+    'default-src': "*",
+    'frame-src': "*",
+    'img-src': "*",
+    'script-src': "*",
+    'style-src': "*"
   };
 
   if (environment === 'test') {
