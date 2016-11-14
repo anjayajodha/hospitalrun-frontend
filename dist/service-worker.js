@@ -1,12 +1,21 @@
 var swEnvironment = {};
 importScripts('sw-toolbox.js');
 var CACHE_PREFIX = 'brocsw-v';
+<<<<<<< HEAD
 var CACHE_VERSION = CACHE_PREFIX+'1479113873313';
 toolbox.options.cache.name = CACHE_VERSION;
 var urlsToPrefetch = [
     '/',
     "assets/hospitalrun-e05b93c5587277561d2eba5158924a54.css",
     "assets/hospitalrun-ed03a1a103c873ec1c7954d45e6dc1ad.js",
+=======
+var CACHE_VERSION = CACHE_PREFIX+'1478920459518';
+toolbox.options.cache.name = CACHE_VERSION;
+var urlsToPrefetch = [
+    '/',
+    "assets/hospitalrun-8faeea05e4c7c0c940a3742a6b3af4d2.js",
+    "assets/hospitalrun-e05b93c5587277561d2eba5158924a54.css",
+>>>>>>> 51f243bacb57d7444c4a3c23381fd56e3a552e83
     "assets/vendor-37ab081da8c19e80cb3f7e57a81dd569.js",
     "assets/vendor-ed8acd5f4063b4b83b5df16f6da9e8b0.css",
     "crossdomain.xml",

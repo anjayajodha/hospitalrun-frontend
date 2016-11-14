@@ -95,21 +95,21 @@ fi
 # Installing dependencies to take load of ember-cli install
 # -----
 
-#echo Installing ember-cli
-#eval $NPM_CMD install -g --no-optional --no-bin-links ember-cli
-#exitWithMessageOnError "ember-cli failed"
+echo Installing ember-cli
+eval $NPM_CMD install -g --no-optional --no-bin-links ember-cli
+exitWithMessageOnError "ember-cli failed"
 
-#echo Installing ember-cli-azure-deploy
-#eval $NPM_CMD install -g ember-cli-azure-deploy
-#exitWithMessageOnError "ember-cli-azure-deploy failed"
+echo Installing ember-cli-azure-deploy
+eval $NPM_CMD install -g ember-cli-azure-deploy
+exitWithMessageOnError "ember-cli-azure-deploy failed"
 
-#if [[ ! -e "$BOWER_PATH" ]]; then
-#  echo Installing bower
-#  eval $NPM_CMD install --global --no-optional --no-bin-links bower
-#  exitWithMessageOnError "bower failed"
-#else
-#  echo bower already installed, nothing to do
-#fi
+if [[ ! -e "$BOWER_PATH" ]]; then
+  echo Installing bower
+  eval $NPM_CMD install --global --no-optional --no-bin-links bower
+  exitWithMessageOnError "bower failed"
+else
+  echo bower already installed, nothing to do
+fi
 
 ##################################################################################################################################
 # Print Versions
@@ -131,25 +131,25 @@ eval $AZUREDEPLOY_CMD -v
 # Build
 # -----
 
-#echo Cleaning Cache
-#eval $NPM_CMD cache clean
-#exitWithMessageOnError "npm cache cleaning failed"
+echo Cleaning Cache
+eval $NPM_CMD cache clean
+exitWithMessageOnError "npm cache cleaning failed"
 
-#echo $PWD
+echo $PWD
 
-#echo Installing npm modules
-#eval $NPM_CMD install --no-optional
-#exitWithMessageOnError "npm install failed"
+echo Installing npm modules
+eval $NPM_CMD install --no-optional
+exitWithMessageOnError "npm install failed"
 
-#echo Installing bower dependencies
-#eval $BOWER_CMD install
-#exitWithMessageOnError "bower install failed"
+echo Installing bower dependencies
+eval $BOWER_CMD install
+exitWithMessageOnError "bower install failed"
 
-#echo Build the dist folder
-#eval $AZUREDEPLOY_CMD build
-#exitWithMessageOnError "ember-cli-azure-deploy build failed"
+echo Build the dist folder
+eval $AZUREDEPLOY_CMD build
+exitWithMessageOnError "ember-cli-azure-deploy build failed"
 
-#echo Copy web.config to the dist folder
+echo Copy web.config to the dist folder
 cp web.config dist\
 
 ##################################################################################################################################
